@@ -8,20 +8,20 @@
     <input type="hidden" name="track[album_id]" value="<%= params[:album_id] || track.album_id %>">
     <table class="form-section-sub-inputs">
       <tr>
-        <td><label for=title>Title: </label></td>
+        <td><label for='title'>Title: </label></td>
         <td><input type='text' name='track[title]' id='title' value='<%= track.title %>'></div></td>
       </tr>
       <tr>
-        <td><label for=ord>Ord: </label></td>
-        <td><input type='number' name='track[ord]' id='ord' value='<%= track.ord %>'></td>
+        <td><label for='track-number'>Track Number: </label></td>
+        <td><input type='number' name='track[ord]' id='track-number' value='<%= track.ord %>'></td>
       </tr>
     </table>
     <table class="form-section-sub-inputs">
       <tr>
-        <td><label for=regular>Regular: </label></td>
+        <td><label for='regular'>Regular: </label></td>
         <td><input type='radio' name='track[is_bonus]' value='regular' id='regular' <%= track.is_bonus ? '' : 'checked' %>></td>
 
-        <td><label for=bonus>Bonus: </label></td>
+        <td><label for='bonus'>Bonus: </label></td>
         <td><input type='radio' name='track[is_bonus]' value='bonus' id='bonus' <%= track.is_bonus ? 'checked' : '' %>></td>
       </tr>
     </table>
