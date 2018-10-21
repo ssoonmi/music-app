@@ -6,7 +6,7 @@
 <section class='show-children'>
   <h3>Albums</h3>
   <div class='show-lists'>
-    <%= render @band.albums %>
+    <%= render @band.albums.order('year DESC, title') %>
   </div>
 </section>
 
