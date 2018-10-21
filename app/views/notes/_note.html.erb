@@ -2,7 +2,7 @@
   <%= note.body %>
   <br/>
   <div class="note-footer">
-    <div>By: <%= note.user.email %></div>
+    <div>by: <%= note.user.email %></div>
     <% if current_user.id == note.user_id %>
       <div class="note-footer-buttons">
         <a class="note-buttons" href="<%= edit_note_url(note) %>">edit</a>

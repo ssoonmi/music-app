@@ -37,5 +37,5 @@
 <section class='show-children notes'>
   <h3>Notes</h3>
   <%= render @track.notes %>
-  <%= render 'notes/form', track_id: @track.id %>
+  <%= render 'notes/form', track_id: @track.id, method: 'post' %>
 </section>

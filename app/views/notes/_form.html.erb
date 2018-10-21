@@ -1,9 +1,11 @@
 <% note ||= Note.new %>
+<% url = method == 'post' ? notes_url : note_url(note) %>
 
-<form action="<%= notes_url %>" method="post">
+<form action="<%= url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="<%= method %>">
   <input type="hidden" name="note[track_id]" value="<%= track_id %>">
   <textarea name="note[body]" rows="4" cols="40" placeholder="Post a Note"><%= note.body %></textarea>
   <br/>
-  <input class="nav-buttons non-sign-log-in-submits" type="submit" name="" value="Make Note">
+  <input class="nav-buttons non-sign-log-in-submits" type="submit" name="" value="<%= method == 'post' ? 'Make Note' : 'Edit Note'%>">
 </form>
