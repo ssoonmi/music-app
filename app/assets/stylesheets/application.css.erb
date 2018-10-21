@@ -16,11 +16,17 @@
 :root {
   --nav-bar-background-color: #4c4c4c;
   --nav-bar-color: white;
+
   --button-background-color: white;
   --button-color: black;
+
   --section-width: 700px;
   --section-background-color: #404040d4;
   --section-color: white;
+
+  --band-list-background-color: #000000a8;
+  --band-list-color: white;
+  --band-list-border-color: #ffffffc2;
 }
 
 * {
@@ -184,11 +190,11 @@ main {
   height: 100px;
   width: 100px;
   display: block;
-  border: 2px #80808099 solid;
+  border: 2px var(--band-list-border-color) solid;
   height: 100px;
   width: 100px;
-  background-color: #ffffffe0;
-  color: #333333;
+  background-color: var(--band-list-background-color);
+  color: var(--band-list-color);
   border-radius: 20px;
   text-decoration: none;
 }
