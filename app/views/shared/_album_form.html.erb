@@ -1,0 +1,31 @@
+<% is_live = '' %>
+<% is_live = (album.is_live) ? 'live' : 'studio' unless album.is_live.nil? %>
+
+
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="album[band_id]" value="<%= params[:band_id] || album.band_id %>">
+    <table class="form-section-sub-inputs">
+      <tr>
+        <td><label for="title">Title: </label></td>
+        <td><input type="text" name="album[title]" id="title" value="<%= album.title %>"></td>
+      </tr>
+      <tr>
+        <td><label for="year">Year: </label></td>
+        <td><input type="number" name="album[year]" id="year" value="<%= album.year %>"></td>
+      </tr>
+    </table>
+    <table class="form-section-sub-inputs">
+      <tr>
+        <td><label for="live">Live: </label></td>
+        <td><input type="radio" name="album[is_live]" value="live" id="live" <%= album.is_live ? 'checked' : '' %>></td>
+
+        <td><label for="studio">Studio: </label></td>
+        <td><input type="radio" name="album[is_live]" value="studio" <%= album.is_live ? '' : 'checked' %>></td>
+      </tr>
+    </table>
+    <input class="nav-buttons non-sign-log-in-submits" type="submit" value="<%= action %>">
+  </div>
+
+</form>

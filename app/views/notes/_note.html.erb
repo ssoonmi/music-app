@@ -1,0 +1,17 @@
+<div class="note">
+  <%= note.body %>
+  <br/>
+  <div class="note-footer">
+    <div>By: <%= note.user.email %></div>
+    <% if current_user.id == note.user_id %>
+      <div class="note-footer-buttons">
+        <a class="note-buttons" href="<%= edit_note_url(note) %>">edit</a>
+        <form action="<%= note_url(note) %>" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <input class="note-buttons" type="submit" name="" value="delete">
+        </form>
+      </div>
+    <% end %>
+  </div>
+</div>

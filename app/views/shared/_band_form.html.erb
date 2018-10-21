@@ -1,0 +1,13 @@
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <table class="form-section-sub-inputs">
+      <tr>
+        <td><label for="name">Name: </label></td>
+        <td><input type="text" name="band[name]" id="name" value="<%= band.name %>"></td>
+      </tr>
+    </table>
+    <input class="nav-buttons non-sign-log-in-submits" type="submit" value="<%= action %>">
+  </div>
+
+</form>

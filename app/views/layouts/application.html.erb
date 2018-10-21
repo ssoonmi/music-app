@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Exo|Exo+2|Fahkwang|Pacifico|Roboto+Slab|Text+Me+One" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://findicons.com/files/icons/2338/reflection/128/music.png">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1><a href="<%= bands_url %>">MusicCollection</a></h1>
+        <div class="sign-up">
+          <% if current_user %>
+            <form action="<%= session_url %>" method="post">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT" class='nav-buttons log-out'>
+            </form>
+          <% else %>
+            <%= button(new_user_url, 'SIGN UP') %>
+            <%= button(new_session_url, 'LOG IN') %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <% if flash[:errors] %>
+        <ul>
+          <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <%= yield %>
+    </main>
+    <footer>
+      <a href="https://stmed.net/wallpaper-113068">Link to background image source</a>
+    </footer>
+  </body>
+</html>

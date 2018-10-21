@@ -1,0 +1,33 @@
+<% is_bonus = '' %>
+<% is_bonus = (track.is_bonus) ? 'bonus' : 'regular' unless track.is_bonus.nil? %>
+
+
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="track[album_id]" value="<%= params[:album_id] || track.album_id %>">
+    <table class="form-section-sub-inputs">
+      <tr>
+        <td><label for=title>Title: </label></td>
+        <td><input type='text' name='track[title]' id='title' value='<%= track.title %>'></div></td>
+      </tr>
+      <tr>
+        <td><label for=ord>Ord: </label></td>
+        <td><input type='number' name='track[ord]' id='ord' value='<%= track.ord %>'></td>
+      </tr>
+    </table>
+    <table class="form-section-sub-inputs">
+      <tr>
+        <td><label for=regular>Regular: </label></td>
+        <td><input type='radio' name='track[is_bonus]' value='regular' id='regular' <%= track.is_bonus ? '' : 'checked' %>></td>
+
+        <td><label for=bonus>Bonus: </label></td>
+        <td><input type='radio' name='track[is_bonus]' value='bonus' id='bonus' <%= track.is_bonus ? 'checked' : '' %>></td>
+      </tr>
+    </table>
+    <textarea style="white-space: pre-wrap; white-space: pre-line;"name="track[lyrics]" rows="10" cols="44" placeholder="LYRICS"><%= track.lyrics %></textarea>
+    <br/>
+    <br/>
+    <input class="nav-buttons non-sign-log-in-submits" type="submit" value="<%= action %>">
+
+</form>

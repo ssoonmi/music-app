@@ -1,0 +1,348 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+:root {
+  --nav-bar-background-color: #4c4c4c;
+  --nav-bar-color: white;
+  --button-background-color: white;
+  --button-color: black;
+  --section-width: 700px;
+  --section-background-color: #404040d4;
+  --section-color: white;
+}
+
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Exo';
+  /* font-weight: bold; */
+  background-color: transparent;
+  background-image: url(<%= asset_path 'band-wallpaper.jpg' %>);
+  background-attachment: fixed;
+  background-position: 0px -60px;
+  background-size: cover;
+}
+
+header {
+
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--nav-bar-background-color);
+  color: var(--nav-bar-color);
+  height: 50px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: 'Pacifico';
+}
+
+h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  margin: 0 auto;
+  margin-top: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.nav-buttons {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  width: 75px;
+  height: 30px;
+  line-height: 30px;
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+}
+
+.show-children, .form-section, .index-page-list {
+  margin: 0 auto;
+  width: var(--section-width);
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: var(--section-background-color);
+  color: var(--section-color);
+  margin-bottom: 40px;
+}
+
+.show-links {
+  margin: 0 auto;
+  width: var(--section-width);
+  box-sizing: border-box;
+  border-radius: 7px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--section-background-color);
+  color: var(--section-color);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.show-info-items {
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.show-info-items tr {
+  text-align: left;
+}
+
+.show-info-items tr > td {
+  padding-right: 5px;
+}
+
+#show-lyrics {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+#show-lyrics pre{
+  text-align: left;
+}
+
+.show-info h2, .form-section-header, .index-page h2{
+  font-size: 30px;
+  font-family: 'Roboto Slab';
+  /* font-weight: bold; */
+}
+
+.show-caption {
+  font-size: 14px;
+}
+
+.show-links .nav-buttons {
+  width: 120px;
+  border: 1px grey solid;
+}
+
+.show-children {
+  margin-top: 20px;
+}
+
+.show-lists {
+  display: flex;
+  flex-flow: row, wrap;
+  justify-content: center;
+}
+
+.show-children h3 {
+  color: white;
+  font-size: 23px;
+  text-decoration: underline;
+}
+
+.albums, .bands {
+  margin: 10px;
+}
+
+.albums a, .bands a {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  display: block;
+  border: 2px #80808099 solid;
+  height: 100px;
+  width: 100px;
+  background-color: #ffffffe0;
+  color: #333333;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.albums a .album-title, .bands a .band-name{
+  width: 100px;
+  padding: 3px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  display: block;
+	margin: 0;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.track-list {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.tracks {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.tracks a {
+  color: inherit;
+}
+
+.form-section-inputs {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.form-section-inputs td {
+  padding-bottom: 10px;
+}
+
+.form-section-inputs tr > td {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.form-section-sub-inputs {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  line-height: normal;
+}
+
+.form-section-sub-inputs td {
+  padding-bottom: 5px;
+}
+
+.form-section-sub-inputs tr > td {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.form-section-sub-inputs td:nth-child(3n) {
+  padding-left: 20px;
+}
+
+.form-section {
+  margin-top: 20px;
+}
+
+input[type=text], input[type=password], input[type=number], textarea{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+}
+
+.non-sign-log-in-submits {
+  width: 120px;
+}
+
+#new-band-button {
+  width: 170px;
+  height: 70px;
+  border-radius: 50px;
+  border: 3px #9e9e9e solid;
+  line-height: 70px;
+  color: white;
+  background-color: #424242;
+}
+
+.index-page-list {
+  display: flex;
+  flex-flow: row, wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.note-buttons {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  border-radius: 3px;
+  width: 40px;
+  height: 18px;
+  line-height: 20px;
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+}
+
+.notes h3 {
+  margin-bottom: 10px;
+}
+
+.note {
+  width: 300px;
+  margin: 0 auto;
+  background-color: grey;
+  margin-bottom: 20px;
+  padding: 8px;
+  padding-bottom: 5px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.note-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  font-size: 12px;
+}
+
+.note-footer-buttons {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  width: 90px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+footer {
+  z-index: 0;
+  width: 100%;
+  height: 18px;
+  font-size: 14px;
+  bottom: 0px;
+  background-color: white;
+  position: fixed;
+  text-align: center;
+}
+
+footer a {
+  color: black;
+}

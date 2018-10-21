@@ -1,0 +1,22 @@
+<section class='show-info'>
+  <h2><%= @band.name.upcase %></h2>
+  <div class="show-caption">band</div>
+</section>
+
+<section class='show-children'>
+  <h3>Albums</h3>
+  <div class='show-lists'>
+    <%= render @band.albums %>
+  </div>
+</section>
+
+<section class= 'show-links'>
+  <%= button(new_band_album_url(@band.id), 'NEW ALBUM') %>
+  <%= button(edit_band_url(@band.id), 'EDIT BAND') %>
+  <form action="<%= band_url(@band.id) %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <input class="nav-buttons" type="submit" value="DELETE BAND">
+  </form>
+  <%= button(bands_url, 'ALL BANDS') %>
+</section>

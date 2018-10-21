@@ -1,0 +1,17 @@
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <table class="form-section-inputs">
+      <tr>
+        <td><label for="email">Email: </label></td>
+        <td><input type="text" name="user[email]" id='email'></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password: </label></td>
+        <td><input type="password" name="user[password]"></td>
+      </tr>
+    </table>
+    <input class="nav-buttons" type="submit" value="<%= action %>">
+  </div>
+
+</form>

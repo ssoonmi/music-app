@@ -1,0 +1,41 @@
+<section class='show-info'>
+  <h2><%= @track.title.upcase %></h2>
+  <div class='show-caption'>song</div>
+  <table class='show-info-items'>
+    <tr>
+      <td align="right">Band:</td>
+      <td><%= @track.band.name %></td>
+    </tr>
+    <tr>
+      <td align="right">Album:</td>
+      <td><%= @track.album.title %></td>
+    </tr>
+    <tr>
+      <td align="right">Track Number:</td>
+      <td><%= @track.ord %></td>
+    </tr>
+  </table>
+  <%= "#{@track.is_bonus ? 'Bonus' : 'Regular'} Track"%>
+  <div class='show-children'>
+    <h3 id='lyrics-heading'>Lyrics:</h3>
+    <div id='show-lyrics'>
+      <pre><%= h(ugly_lyrics(@track.lyrics)) %></pre>
+    </div>
+  </div>
+</section>
+
+<section class= 'show-links'>
+  <%= button(edit_track_url(@track.id), 'EDIT TRACK') %>
+  <%= button(band_url(@track.band.id), 'GO TO BAND') %>
+  <%= button(album_url(@track.album_id), 'GO TO ALBUM') %>
+  <form action="<%= track_url(@track.id) %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <input class="nav-buttons" type="submit" value="DELETE TRACK">
+  </form>
+</section>
+<section class='show-children notes'>
+  <h3>Notes</h3>
+  <%= render @track.notes %>
+  <%= render 'notes/form', track_id: @track.id %>
+</section>

@@ -1,0 +1,5 @@
+<h3 class="form-section-header">Edit Album Info</h3>
+
+<div class="form-section">
+  <%= render 'shared/album_form', url: album_url(@album.id), method: 'patch', action: 'EDIT ALBUM', album: @album%>
+</div>

@@ -1,0 +1,5 @@
+<h3 class="form-section-header">Edit Band Info</h3>
+
+<div class="form-section">
+  <%= render 'shared/band_form', url: band_url(@band.id), method: 'patch', action: 'EDIT BAND', band: @band%>
+</div>

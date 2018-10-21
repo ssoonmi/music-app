@@ -1,0 +1,5 @@
+<h3 class="form-section-header">Edit Track Info</h3>
+
+<div class="form-section">
+<%= render 'shared/track_form', url: track_url(@track.id), method: 'patch', action: 'EDIT TRACK', track: @track%>
+</div>

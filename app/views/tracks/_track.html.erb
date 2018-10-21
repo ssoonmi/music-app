@@ -1,0 +1,8 @@
+<div class="tracks">
+  <a href="<%= track_url(track.id) %>">
+    <% if track.ord %>
+      <span><%= track.ord %>. </span>
+    <% end %>
+    <%= track.title %>
+  </a>
+</div>
